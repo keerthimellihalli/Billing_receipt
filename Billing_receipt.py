@@ -2,7 +2,6 @@ import sys
 
 # Check number of arguments (script name + 4 arguments = 5)
 if len(sys.argv) != 5:
-    print("Error: Missing arguments!")
     print("Usage: python Billing_receipt.py <item name> <quantity> <price per unit> <discount>")
     sys.exit(0)
 
