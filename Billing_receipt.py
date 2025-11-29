@@ -27,4 +27,5 @@ print(f"Item Name     : {item_name}")
 print(f"Quantity      : {quantity}")
 print(f"Price/Unit    : {price_per_unit:.2f}")
 print(f"Subtotal      : {subtotal:.2f}")
-
+print(f"Discount      : {discount_amount:.2f}")
+print(f"Total         : {total:.2f}")
