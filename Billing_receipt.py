@@ -2,7 +2,7 @@ import sys
 
 # sys.argv[0] is the script name, so actual inputs start from sys.argv[1]
 if len(sys.argv) != 5:
-    print("Usage: python billing.py <item_name> <quantity> <price_per_unit> <discount>")
+    print("Usage: python Billing_receipt.py <item_name> <quantity> <price_per_unit> <discount>")
     sys.exit(1)
 
 item_name = sys.argv[1]
