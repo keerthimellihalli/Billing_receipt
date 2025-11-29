@@ -1,27 +1,21 @@
 import sys
 
-# Check number of arguments (script name + 4 arguments = 5)
-if len(sys.argv) != 5:
+if len(sys.argv) < 4:
     print("Usage: python Billing_receipt.py <item name> <quantity> <price per unit> <discount>")
-    sys.exit(0)
+    sys.exit(1)
 
 item_name = sys.argv[1]
 quantity = int(sys.argv[2])
-price_per_unit = float(sys.argv[3])
-discount = float(sys.argv[4])   # discount in percentage
+price = float(sys.argv[3])
 
-# Calculate total
-subtotal = quantity * price_per_unit
+# If discount not given, set it to 0
+discount = float(sys.argv[4]) if len(sys.argv) >= 5 else 0
 
-# Apply discount
-discount_amount = subtotal * (discount / 100)
-total = subtotal - discount_amount
+total = quantity * price
+final_amount = total - discount
 
-# Print receipt
-print("\n===== Billing Receipt =====")
-print(f"Item Name     : {item_name}")
-print(f"Quantity      : {quantity}")
-print(f"Price/Unit    : {price_per_unit:.2f}")
-print(f"Subtotal      : {subtotal:.2f}")
-print(f"Discount      : {discount_amount:.2f}")
-print(f"Total         : {total:.2f}")
+print("Item:", item_name)
+print("Quantity:", quantity)
+print("Price per Unit:", price)
+print("Discount:", discount)
+print("Total Amount:", final_amount)
