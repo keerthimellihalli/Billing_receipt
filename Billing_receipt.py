@@ -1,7 +1,7 @@
 import sys
 
-# sys.argv[0] is the script name, so actual inputs start from sys.argv[1]
 if len(sys.argv) != 5:
+    print("Error: Missing arguments!")
     print("Usage: python Billing_receipt.py <item name> <quantity> <price per unit> <discount>")
     sys.exit(1)
 
