@@ -1,5 +1,6 @@
 import sys
 
+# Check number of arguments (script name + 4 arguments = 5)
 if len(sys.argv) != 5:
     print("Error: Missing arguments!")
     print("Usage: python Billing_receipt.py <item name> <quantity> <price per unit> <discount>")
@@ -13,13 +14,9 @@ discount = float(sys.argv[4])   # discount in percentage
 # Calculate total
 subtotal = quantity * price_per_unit
 
-# Apply discount if any
-if discount > 0:
-    discount_amount = subtotal * (discount / 100)
-    total = subtotal - discount_amount
-else:
-    discount_amount = 0
-    total = subtotal
+# Apply discount
+discount_amount = subtotal * (discount / 100)
+total = subtotal - discount_amount
 
 # Print receipt
 print("\n===== Billing Receipt =====")
